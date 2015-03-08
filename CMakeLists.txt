@@ -37,3 +37,14 @@ add_executable(reaper epoch_tracker_main.cc)
 target_link_libraries(wave core)
 target_link_libraries(epoch_tracker wave)
 target_link_libraries(reaper epoch_tracker)
+
+# Create a *single* shared library
+add_library(reaper_wrap SHARED
+  core/float_matrix-inl.h core/float_matrix.cc core/track.h core/track.cc
+  epoch_tracker/fft.h epoch_tracker/fft.cc
+  epoch_tracker/fd_filter.h epoch_tracker/fd_filter.cc
+  epoch_tracker/lpc_analyzer.cc epoch_tracker/lpc_analyzer.h
+  epoch_tracker/epoch_tracker.cc epoch_tracker/epoch_tracker.h
+  cwrap/epoch_tracker_wrap.cc cwrap/epoch_tracker_wrap.h)
+
+SET_TARGET_PROPERTIES(reaper_wrap PROPERTIES OUTPUT_NAME "reaper")
