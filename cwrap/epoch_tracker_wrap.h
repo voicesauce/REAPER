@@ -1,6 +1,8 @@
 #pragma once
 
 // Minimum mid-level C-interface for REAPER
+// LICENSE: MIT
+// Ryuichi YAMAMOTO (zryuichi@gmail.com)
 
 // TODO: consistent naming rule
 

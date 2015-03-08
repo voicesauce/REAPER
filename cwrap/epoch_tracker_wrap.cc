@@ -1,3 +1,6 @@
+// LICENSE: MIT
+// Ryuichi YAMAMOTO (zryuichi@gmail.com)
+
 #include "epoch_tracker_wrap.h"
 
 EpochTracker* CreateEpochTracker() { return new EpochTracker(); }

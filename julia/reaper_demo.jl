@@ -1,5 +1,8 @@
 # Demo: REAPER from Julia
 
+# LICENSE: MIT
+# Ryuichi YAMAMOTO (zryuichi@gmail.com)
+
 module REAPER
 
 export reaper
@@ -7,7 +10,7 @@ export reaper
 const libreaper = "../build/libreaper"
 
 function reaper(x::Vector, fs; kargs...)
-    error("REAPRE can only accept Vector{Int16} as input.")
+    error("REAPER can only accept Vector{Int16} as input.")
 end
 
 # TODO separate `reaper` to small functions. This is just a demo code.
