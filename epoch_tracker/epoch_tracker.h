@@ -266,6 +266,9 @@ class EpochTracker {
   void set_max_f0_search(float v) { max_f0_search_ = v; }
   void set_unvoiced_cost(float v) { unvoiced_cost_ = v; }
 
+  // Free memory, and prepare the instance for a new signal.
+  void CleanUp(void);
+
  private:
   // Search the signal in norm_residual_ for prominent negative peaks.
   // Grade the peaks on a combination of amplitude, "peakiness" and
@@ -285,9 +288,6 @@ class EpochTracker {
   // to the probability that voicing is occurring.  This is presently
   // based solely on the bandpassed RMS signal, bandpassed_rms_.
   void GetRmsVoicingModulator(void);
-
-  // Free memory, and prepare the instance for a new signal.
-  void CleanUp(void);
 
   // Scan the signal in input searching for all local maxima that
   // exceed thresh.  The indices corresponding to the location of the
